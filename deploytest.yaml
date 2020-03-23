@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  ownerReferences:
+  - apiVersion: app.dsgkinfo.com/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Application
+    name: application-ecp
+    uid: 8ced7c05-01fe-11ea-babc-025000000001
+  name: ecp
+  labels:
+    app: ecp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: ecp
+      labels:
+        app: ecp
+    spec:
+      containers:
+        - name: nginx
+          image: 192.168.31.132/appdeploy/tomcat:7
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: ecp
+

@@ -1,0 +1,38 @@
+apiVersion: app.dsgkinfo.com/v1
+kind: Application
+metadata:
+  name: wsgw
+spec:
+  description: wsgw
+  modules:
+    - name: osg-uc0001
+      proxies:
+        - port: 8002
+          protocol: tcp
+          targetPort: 10001
+      template:
+        replicas: 1
+        selector:
+          matchLabels:
+            name: osg-uc0001
+        template:
+          metadata:
+            labels:
+              name: osg-uc0001
+          spec:
+            containers:
+              - image: 192.168.31.132/appdeploy/java:8
+                imagePullPolicy: IfNotPresent
+                name: osg-uc0001
+                ports:
+                  - containerPort: 8002
+                    protocol: TCP
+                resources:
+                  limits:
+                    cpu: 200m
+                    memory: 1Gi
+                  requests:
+                    cpu: 200m
+                    memory: 1Gi
+            dnsPolicy: ClusterFirst
+            restartPolicy: Always

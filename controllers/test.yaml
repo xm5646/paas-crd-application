@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp
+  labels:
+    app: wsgw
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: testapp
+      labels:
+        app: wsgw
+    spec:
+      containers:
+        - name: nginx
+          image: 192.168.31.132/appdeploy/tomcat:7
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: wsgw

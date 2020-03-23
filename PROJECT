@@ -1,0 +1,13 @@
+version: "2"
+domain: dsgkinfo.com
+repo: application
+resources:
+- group: app
+  version: v1
+  kind: Application
+- group: app
+  version: v1
+  kind: Module
+- group: app
+  version: v1
+  kind: Module
