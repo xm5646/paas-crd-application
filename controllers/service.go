@@ -6,9 +6,9 @@
 package controllers
 
 import (
-	appv1 "192.168.31.131/paas-crd/application/api/v1"
 	"context"
 	"fmt"
+	appv1 "github.com/xm5646/paas-crd-application/api/v1"
 	v1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	apierrs "k8s.io/apimachinery/pkg/api/errors"

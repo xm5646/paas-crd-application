@@ -1,4 +1,4 @@
-module 192.168.31.131/paas-crd/application
+module github.com/xm5646/paas-crd-application
 
 go 1.13
 

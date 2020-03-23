@@ -17,11 +17,11 @@ limitations under the License.
 package main
 
 import (
-	appv1 "192.168.31.131/paas-crd/application/api/v1"
 	"flag"
+	appv1 "github.com/xm5646/paas-crd-application/api/v1"
 	"os"
 
-	"192.168.31.131/paas-crd/application/controllers"
+	"github.com/xm5646/paas-crd-application/controllers"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"

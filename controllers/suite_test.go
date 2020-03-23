@@ -25,7 +25,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	appv1 "192.168.31.131/paas-crd/application/api/v1"
+	appv1 "github.com/xm5646/paas-crd-application/api/v1"
 
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/rest"
